@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landiso Phaahla | Software Engineer</title>
+    <meta name="description" content="Professional portfolio of Landiso Phaahla - Software Engineering student at Richfield College">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #64748b;
+            --text-dark: #1e293b;
+            --text-light: #94a3b8;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-lg: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--white);
+            padding: 60px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .profile-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+            font-size: 0.95rem;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        nav {
+            background: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .nav-link {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background: rgba(37, 99, 235, 0.02);
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        .section {
+            background: var(--white);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        .summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: var(--secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--white);
+            z-index: 1;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .timeline-subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .timeline-content {
+            color: var(--secondary);
+            line-height: 1.7;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: var(--white);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid var(--primary);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            gap: 10px;
+            text-decoration: underline;
+        }
+
+        .certifications-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .certificate {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #10b981;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .certificate i {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+
+        .references {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .reference-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .reference-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .reference-title {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .reference-company {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .reference-phone {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-link {
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .subtitle {
+                text-align: center;
+                font-size: 1.1rem;
+            }
+
+            .contact-item {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 12px 8px;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item::before {
+                left: -25px;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-section">
+                    <h1>Landiso Phaahla</h1>
+                    <div class="subtitle">Software Engineering Student</div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Pretoria, Gauteng</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>068 235 7541</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:landisodimpho.phaahla@gmail.com" style="text-decoration: none; color: inherit;">landisodimpho.phaahla@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/CodeBreweryZA" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/landiso-phaahla-a54b94398" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#summary" class="nav-link active">Summary</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#certifications" class="nav-link">Certifications</a>
+            <a href="#references" class="nav-link">References</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="summary" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-user-tie"></i>
+                Professional Summary
+            </h2>
+            <p class="summary">
+                Motivated and detail-oriented Information Technology Software Engineering student at Richfield College, 
+                pursuing a Diploma in Information Technology (Software Engineering). Strong foundation in software development,
+                web development, database management, and programming, with hands-on experience building web applications
+                and software projects. Proficient in C++, Java, PHP, Python, SQL, HTML, CSS, and JavaScript.
+                Seeking an internship or entry-level opportunity in Software Development, Web Development, 
+                Database Administration, IT Support, or Data Entry where I can apply my technical skills,
+                continue learning, and contribute to organisational success.
+            </p>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">Richfield College</div>
+                    <div class="timeline-subtitle">Diploma in Information Technology (Software Engineering)</div>
+                    <div class="timeline-content">
+                        <p>January 2025 – December 2027 (Expected)</p>
+                        <p>Currently studying Software Engineering with focus on web development, database management, and application development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-briefcase"></i>
+                Professional Experience
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">Sales Representative</div>
+                    <div class="timeline-subtitle">ITalk</div>
+                    <div class="timeline-content">
+                        <p><em>March 2021 – December 2021</em></p>
+                        <p>• Conducted outbound cold calls to prospective customers</p>
+                        <p>• Presented products and services to clients</p>
+                        <p>• Closed sales and achieved performance targets</p>
+                        <p>• Scheduled appointments and follow-up meetings</p>
+                        <p>• Built and maintained strong customer relationships</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-title">Deputy Presiding Officer | Registration Officer | Voting Officer</div>
+                    <div class="timeline-subtitle">Independent Electoral Commission (IEC)</div>
+                    <div class="timeline-content">
+                        <p>• Managed voting station operations in compliance with electoral procedures</p>
+                        <p>• Registered eligible voters and provided voter education</p>
+                        <p>• Operated the Voter Management Device (VMD)</p>
+                        <p>• Opened and closed voting stations</p>
+                        <p>• Managed election materials and completed material rollback</p>
+                        <p>• Worked collaboratively with stakeholders while maintaining professionalism and integrity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Technical Skills
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li>C++, Java, PHP, Python</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Web Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML, CSS, JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Database Management</h3>
+                    <ul class="skill-list">
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Office, Git, GitHub</li>
+                        <li>Software Debugging & Testing</li>
+                        <li>Problem Solving</li>
+                        <li>Teamwork</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-project-diagram"></i>
+                Academic Projects
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Campus Management System</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Developed a responsive web application for managing campus-related information. Designed an intuitive interface with structured navigation and responsive layouts.</p>
+                        <a href="https://codebreweryza.github.io/Campus-Management-System/" target="_blank" class="project-link">
+                            View Project <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">Valentine's Day Trap</div>
+                        <div class="tech-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>Designed and developed an interactive web application demonstrating front-end development, responsive design, and JavaScript functionality.</p>
+                        <a href="https://codebreweryza.github.io/Valentines-Day-Trap/" target="_blank" class="project-link">
+                            View Project <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-title">GitHub Portfolio</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">GitHub</span>
+                            <span class="tech-tag">Web Development</span>
+                        </div>
+                        <p>Personal development portfolio showcasing academic projects and skills in software engineering.</p>
+                        <a href="https://github.com/CodeBreweryZA" target="_blank" class="project-link">
+                            View GitHub <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-award"></i>
+                Certifications
+            </h2>
+            <div class="certifications-list">
+                <div class="certificate">
+                    <i class="fas fa-robot"></i>
+                    <div>Artificial Intelligence Fundamentals with Capstone Project</div>
+                </div>
+
+                <div class="certificate">
+                    <i class="fab fa-aws"></i>
+                    <div>AWS Academy Graduate – Cloud Foundations – Training Badge</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="section">
+            <h2 class="section-title">
+                <i class="fas fa-address-book"></i>
+                References
+            </h2>
+            <div class="references">
+                <div class="reference-card">
+                    <div class="reference-name">Bokamoso</div>
+                    <div class="reference-title">Human Resources (HR)</div>
+                    <div class="reference-company">Independent Electoral Commission (IEC)</div>
+                    <div class="reference-phone">
+                        <i class="fas fa-phone"></i>
+                        012 358 8594
+                    </div>
+                </div>
+
+                <div class="reference-card">
+                    <div class="reference-name">Francisca</div>
+                    <div class="reference-title">Lecturer</div>
+                    <div class="reference-company">Richfield College</div>
+                    <div class="reference-phone">
+                        <i class="fas fa-phone"></i>
+                        +27 78 792 7025
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Landiso Phaahla | Software Engineering Student</p>
+                <div class="footer-links">
+                    <a href="mailto:landisodimpho.phaahla@gmail.com" class="footer-link">landisodimpho.phaahla@gmail.com</a>
+                    <a href="https://github.com/CodeBreweryZA" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/landiso-phaahla-a54b94398" class="footer-link">LinkedIn</a>
+                    <a href="tel:0682357541" class="footer-link">068 235 7541</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+
+            function updateActiveNav() {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav();
+        });
+    </script>
+</body>
+</html>
